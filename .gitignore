@@ -1,0 +1,31 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Data (keep only processed small artifacts)
+data/raw/*.csv
+data/raw/data/
+data/raw/*.json
+data/processed/*.parquet
+data/*.db
+data/*.sqlite
+data/*.db-journal
+data/raw/.cache/
+.cache/
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+*.log
+step.py
+
+PLAN.md
+REQUIREMENTS.md
