@@ -4,8 +4,8 @@ import pandas as pd
 PLACEHOLDERS = ["ЖОҚ", "НЕТ", "нет", "undefined"]
 # делим: запятая + заглавная буква
 SEP = r",\s+(?=[A-ZА-ЯЁӘҒҚҢӨҰҮҺІ])"
-# справка в скобках
-BRACKETS = r"\s*\([^()]*\)"
+# справка в скобках, кроме области
+BRACKETS = r"\s*\((?![^()]*облысы\))[^()]*\)"
 
 def clean_placeholders(df: pd.DataFrame) -> pd.DataFrame:
     """Заменяа заглушек на NaN."""
@@ -23,8 +23,8 @@ def strip_brackets(series: pd.Series) -> pd.Series:
 
     s = series.astype(str)
 
-    # пока есть скобки, удаляем
-    while s.str.contains("(", regex=False).any():
+    # пока есть справка, удаляем
+    while s.str.contains(BRACKETS, regex=True).any():
         s = s.str.replace(BRACKETS, "", regex=True)
 
     # возвращаем настоящий NaN
