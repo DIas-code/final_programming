@@ -1,0 +1,6 @@
+﻿model,MAE,time_ms
+linreg_2016,214.8,17.61
+linreg_2000,257.5,16.05
+seasonal_naive,300.8,0.71
+moving_avg_12,351.8,0.82
+naive,1828.6,0.41
