@@ -1,14 +1,11 @@
 import sqlite3
 import sys
 from pathlib import Path
-
 # корень проекта в пути
 sys.path.append(str(Path(__file__).resolve().parents[1]))
-
 import pandas as pd
 import plotly.express as px
 import streamlit as st
-
 from src.config import DB_PATH
 
 st.set_page_config(page_title="Законодательство Казахстана", layout="wide")
